@@ -2,9 +2,16 @@
 ;; byte-compile-warnings: (not free-vars unresolved)
 ;; end:
 
-(prelude-require-package 'darkokai-theme)
+(setq prelude-whitespace nil)
+(setq prelude-guru nil)
+(setq prelude-flyspell nil)
 
 (setq-default flycheck-emacs-lisp-load-path 'inherit)
 
-(setq prelude-whitespace nil)
-(setq prelude-guru nil)
+(prelude-require-package 'use-package)
+
+(use-package darkokai-theme)
+(use-package vue-mode)
+
+(use-package emmet-mode
+  :hook (vue-mode))
